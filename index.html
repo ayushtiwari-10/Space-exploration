@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Exploration Game</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        #game-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        #game-canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        #ui-overlay {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        button, select {
+            margin: 5px;
+            padding: 5px 10px;
+        }
+        #info-panel {
+            margin-top: 10px;
+            max-width: 300px;
+        }
+        #planet-info {
+            font-size: 14px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        <div id="ui-overlay">
+            <button id="launch-btn">Launch Rocket</button>
+            <div id="countdown"></div>
+            <div id="controls" style="display: none;">
+                <select id="view-select">
+                    <option value="earth">Earth Orbit</option>
+                    <option value="full">Full Solar System</option>
+                    <option value="centric">Planet Centric</option>
+                    <option value="rocket">Rocket View</option>
+                </select>
+                <select id="planet-select">
+                    <option value="">Select a planet</option>
+                </select>
+                <button id="info-btn">Planet Info</button>
+            </div>
+            <div id="info-panel">
+                <h2 id="planet-name"></h2>
+                <div id="planet-info"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
